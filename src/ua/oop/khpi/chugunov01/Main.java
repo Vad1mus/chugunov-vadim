@@ -57,19 +57,16 @@ public class Main {
 		        Count.CountOfBinaryNumber(StringOfOctalPhonePart);
 		        Count.CountOfBinaryNumber(StringOfTaskNumber);
 		        Count.CountOfBinaryNumber(StringOfEngChar);
-
 			}
 		}
 
 
 class Count
 {
-
-    static byte odd = 0;
-    static byte even  = 0;
-    static byte oneCount = 0;
+	private static byte odd = 0;
+    private static byte even  = 0;
+    private static byte oneCount = 0;
 /**
- * 
  * @param number - a number that checks for oddness and evenness
  */
 	public static void CountEvenNumber ( String number)
@@ -87,11 +84,11 @@ class Count
 		 System.out.println("Odd: " + odd);
 		 System.out.println("Even: " + even);
 		 System.out.println("\n ");
-
+		 odd = 0;
+		 even = 0;
 
 	}
 /**
- * 
  * @param number - (args) in this number we are looking for the number of units
  */
 	public static void CountOfBinaryNumber(String number)
@@ -106,7 +103,8 @@ class Count
         }
 		System.out.println("Number in Binary Number System: " + number);
 		System.out.println("Count Of (1) Numbers: " + oneCount);
-		 System.out.println("\n ");
+		System.out.println("\n ");
+		oneCount = 0;
 	}
 }
 
