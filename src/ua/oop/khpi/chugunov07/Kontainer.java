@@ -6,7 +6,7 @@ public class Kontainer {
     /**
      * First size for array.
      */
-    private final int size = 2;
+    private final int size = 10;
     /**
      * Array contains all data.
      */
@@ -30,14 +30,22 @@ public class Kontainer {
         } else {
             System.out.println();
             for (int i = 0; i < count; i++) {
+                System.out.print("\n====================================================\n");
                 System.out.println("Запись в расписании #" + (i+1));
                 System.out.println("Номер рейса: " + massik[i].getFlightNumber());
                 System.out.println("Время отправления: " + massik[i].getDepartureTime());
                 System.out.println("День недели: " + massik[i].getDayOfTheWeek());
                 System.out.println("Кол-во свободных мест: " + massik[i].getNumberOfFreeSeats());
-                //System.out.println("Маршрут: " + massik[i].getRoute());
+                System.out.print("Маршрут: ");
+                for (int j = 0; j < massik[i].getRoute().length ; j++) {
+                    System.out.print(massik[i].getRouteOnIndex(j));
+                    if(j != massik[i].getRoute().length -1){
+                        System.out.print(", ");
+                    }
                 }
-           }
+                System.out.print("\n====================================================");
+            }
+          }
     }
 
 

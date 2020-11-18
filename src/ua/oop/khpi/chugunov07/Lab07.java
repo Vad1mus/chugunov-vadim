@@ -8,13 +8,8 @@ public class Lab07 {
         BusStation rec2 = new BusStation();
         rec1.generateScheduleEntry();
         contains.add(rec1);
-        contains.add(rec1);
-        contains.add(rec1);
         rec2.generateScheduleEntry();
         contains.add(rec2);
         contains.show();
-
-
     }
-
 }

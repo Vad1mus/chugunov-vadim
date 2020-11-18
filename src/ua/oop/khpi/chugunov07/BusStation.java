@@ -11,6 +11,7 @@ public class BusStation {
     private String dayOfTheWeek;   // день недели
     private int numberOfFreeSeats; // кол-во свободных мест
     private String[] route;        // маршрут (Станция, время прибытия)
+    int size = 0;
 
     /**
      * The setters of our information variables
@@ -55,41 +56,50 @@ public class BusStation {
         return dayOfTheWeek;
     }
 
-    String[] getRoute() {
+    String getRouteOnIndex(int index) {
+        return route[index];
+    }
+
+    String[] getRoute (){
         return route;
     }
 
 
     void generateScheduleEntry() {
-        Scanner scan = new Scanner(System.in);
-        Scanner scan2 = new Scanner(System.in);
-        Scanner scan3 = new Scanner(System.in);
-        String[] array = null;
+        Scanner scan   = new Scanner(System.in);
+        Scanner scan2  = new Scanner(System.in);
+        Scanner scan3  = new Scanner(System.in);
+        Scanner scan4  = new Scanner(System.in);
+        Scanner scan5  = new Scanner(System.in);
+
+
         int i = 0;
         int choice = 0;
 
         System.out.print("\nВведите номер рейса: ");
         flightNumber = scan.nextInt();
         System.out.print("\nВведите время отправления: ");
-        departureTime = scan.nextLine();
+        departureTime = scan2.nextLine();
         System.out.print("\nВведите день недели: ");
-        dayOfTheWeek = scan.nextLine();
+        dayOfTheWeek = scan3.nextLine();
         System.out.print("\nВведите количество свободных мест: ");
-        numberOfFreeSeats = scan.nextInt();
-        /**
-        System.out.print("\nВведите маршрут - Название станции и время прибытия(через запятую): ");
+        numberOfFreeSeats = scan4.nextInt();
+        System.out.print("\nВведите количество станций, которые входят в маршрут: ");
+        size = scan5.nextInt();
+        System.out.print("\nВведите маршрут - Название станции и время прибытия: ");
+        String[] array = new String[size];
 
-        while (true) {
-            array[i] = scan2.nextLine();
+        while (i<size) {
+            String info = scan2.nextLine();
+            array[i] = info;
             i++;
-            System.out.print("\nОдин маршрут добавлен, добавить еще один? 1-ДА, 2-НЕТ: ");
-            choice = scan3.nextInt();
-            if (choice == 2) {
-                break;
+            System.out.print("\nОдин маршрут добавлен!");
+            if(i !=size){
+                System.out.print("\nВведите еще один маршрут: ");
             }
-            System.out.print("\nВведите еще один маршрут: ");
         }
         route = array;
-         **/
+        System.out.println();
+
     }
 }

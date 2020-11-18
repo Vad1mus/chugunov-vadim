@@ -14,28 +14,19 @@ public class Main {
      */
 	public static void main(String[] args)
 	{
-		int number  = 10450384;
-		int number2 = 38488399;
-		int number3 = 10758307;
-		int number4 = 12341948;
+		Random rand = new Random();
 
-		 ArrayList<Integer> minNums = new ArrayList<Integer>();
+		ArrayList<Integer> minNums = new ArrayList<Integer>();
 		System.out.print("\n-----------------------------------------");
 		System.out.print("\nInput number\t\tIndex of min numbers|");
 		System.out.print("\n-----------------------------------------");
-		 findMinNums(number, minNums);
-		 printInfo(number, minNums);
-		 minNums.clear();
-		 findMinNums(number2, minNums);
-		 printInfo(number2, minNums);
-		 minNums.clear();
-		 findMinNums(number3, minNums);
-		 printInfo(number3, minNums);
-		 minNums.clear();
-		 findMinNums(number4, minNums);
-		 printInfo(number4, minNums);
-		 minNums.clear();
-
+		final int numOfIters = 10;
+		for (int i = 0; i < numOfIters; i++) {
+			int number = rand.nextInt(100);
+			findMinNums(number, minNums);
+			printInfo(number, minNums);
+			minNums.clear();
+		}
 
 	}
 	
@@ -73,7 +64,8 @@ public class Main {
 
 	private static void printInfo(final int num,final ArrayList<Integer> array) {
 
-        System.out.print("\n"+num+"\t\t\t");
+        System.out.print("\n"+num);
+		System.out.print("\t\t\t\t\t\t");
         for (int i : array) {
             System.out.format("%d ", i);
 
