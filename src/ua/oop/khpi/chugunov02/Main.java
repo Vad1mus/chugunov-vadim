@@ -6,14 +6,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Main {
-	
 	/**
-     * An entry point - main method.
-     *
-     * @param args - arguments of main method
-     */
-	public static void main(String[] args)
-	{
+	 * An entry point - main method.
+	 *
+	 * @param args - arguments of main method
+	 */
+	public static void main(String[] args) {
 		Random rand = new Random();
 
 		ArrayList<Integer> minNums = new ArrayList<Integer>();
@@ -29,50 +27,48 @@ public class Main {
 		}
 
 	}
-	
-	 /**
-     * Finds min digits of a number.
-     *
-     * @param num - number for search of min digits
-     * @param array - an array of min digits
-     */
-	
-	private static void findMinNums(final int num,final ArrayList<Integer> array) {
+
+	/**
+	 * Finds min digits of a number.
+	 *
+	 * @param num   - number for search of min digits
+	 * @param array - an array of min digits
+	 */
+
+	private static void findMinNums(final int num, final ArrayList<Integer> array) {
 		ArrayList<Integer> arr = new ArrayList<Integer>();
-        int number = num;
-        final int constant = 10;
-        while (number > 0) {
-            arr.add(0, number % constant);
-            number /= constant;
-        }
-        int min = Collections.min(arr);
-        for (int i = 0; i < arr.size(); i++) {
-            if (arr.get(i) == min) {
-                array.add(i);
-             }
-        }
-	 }
-   
-
-/**
- * Prints array of min digits.
- *
- * @param num - a source number
- * @param array - an array of min digits
- */
+		int number = num;
+		final int constant = 10;
+		while (number > 0) {
+			arr.add(0, number % constant);
+			number /= constant;
+		}
+		int min = Collections.min(arr);
+		for (int i = 0; i < arr.size(); i++) {
+			if (arr.get(i) == min) {
+				array.add(i);
+			}
+		}
+	}
 
 
-	private static void printInfo(final int num,final ArrayList<Integer> array) {
+	/**
+	 * Prints array of min digits.
+	 *
+	 * @param num   - a source number
+	 * @param array - an array of min digits
+	 */
 
-        System.out.print("\n"+num);
+
+	private  static void printInfo(final int num, final ArrayList<Integer> array) {
+
+		System.out.print("\n" + num);
 		System.out.print("\t\t\t\t\t\t");
-        for (int i : array) {
-            System.out.format("%d ", i);
+		for (int i : array) {
+			System.out.format("%d ", i);
 
-        }
+		}
 		System.out.print("\t\t\t\t|");
-        System.out.print("\n-----------------------------------------");
-    }
-	
+		System.out.print("\n-----------------------------------------");
+	}
 }
-

@@ -1,16 +1,22 @@
 package ua.oop.khpi.chugunov07;
-import java.util.Scanner;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
 
 /**
- * The class that contains realization of the BusStation
+ * Bus Station class.
+ * Class defines the entity of a special task.
+ * Schedule entries that contains of flightNumber,departureTime etc.
  */
-
 public class BusStation {
-    private int flightNumber;      //номер рейска
-    private String departureTime;  // время отправления
-    private String dayOfTheWeek;   // день недели
-    private int numberOfFreeSeats; // кол-во свободных мест
-    private String[] route;        // маршрут (Станция, время прибытия)
+    private int flightNumber;      // A flight number in Schedule
+    private String departureTime;  // departure time of the bus
+    private String dayOfTheWeek;   // day of the week when the bus travels
+    private int numberOfFreeSeats; // count of free seats in bus
+    private String[] route;        // The bus route (name of station, arrival time)
     int size = 0;
 
     /**
@@ -33,73 +39,74 @@ public class BusStation {
         this.numberOfFreeSeats = numberOfFreeSeats;
     }
 
-    public void setRoute(String[] rout) {
-        this.route = rout;
+    public void setRoute(String[] route) {
+        this.route = route;
+    }
+
+    /**
+     * Adding stations in the route.
+     * @param stationNum - the number of stations
+     * @throws IOException - if there is any unresolved input/output
+     */
+    public void enterRoute(int stationNum) throws IOException {
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(System.in));
+        this.route = new String[stationNum];
+        System.out.println("Введите " + stationNum + " станций");
+        String getRouteName;
+        for (int i = 0; i < stationNum; i++) {
+            System.out.print((i + 1) + ". ");
+            getRouteName = reader.readLine();
+            this.route[i] = getRouteName;
+        }
     }
 
     /**
      * The getters of our information variables
      */
-    int getFlightNumber() {
+    public  int getFlightNumber() {
         return flightNumber;
     }
 
-    int getNumberOfFreeSeats() {
+    public int getNumberOfFreeSeats() {
         return numberOfFreeSeats;
     }
 
-    String getDepartureTime() {
+    public String getDepartureTime() {
         return departureTime;
     }
 
-    String getDayOfTheWeek() {
+    public String getDayOfTheWeek() {
         return dayOfTheWeek;
     }
 
-    String getRouteOnIndex(int index) {
+    public String getRouteOnIndex(int index) {
         return route[index];
     }
 
-    String[] getRoute (){
+    public String[] getRoute (){
         return route;
     }
 
-
-    void generateScheduleEntry() {
-        Scanner scan   = new Scanner(System.in);
-        Scanner scan2  = new Scanner(System.in);
-        Scanner scan3  = new Scanner(System.in);
-        Scanner scan4  = new Scanner(System.in);
-        Scanner scan5  = new Scanner(System.in);
-
-
-        int i = 0;
-        int choice = 0;
-
-        System.out.print("\nВведите номер рейса: ");
-        flightNumber = scan.nextInt();
-        System.out.print("\nВведите время отправления: ");
-        departureTime = scan2.nextLine();
-        System.out.print("\nВведите день недели: ");
-        dayOfTheWeek = scan3.nextLine();
-        System.out.print("\nВведите количество свободных мест: ");
-        numberOfFreeSeats = scan4.nextInt();
-        System.out.print("\nВведите количество станций, которые входят в маршрут: ");
-        size = scan5.nextInt();
-        System.out.print("\nВведите маршрут - Название станции и время прибытия: ");
-        String[] array = new String[size];
-
-        while (i<size) {
-            String info = scan2.nextLine();
-            array[i] = info;
-            i++;
-            System.out.print("\nОдин маршрут добавлен!");
-            if(i !=size){
-                System.out.print("\nВведите еще один маршрут: ");
-            }
-        }
-        route = array;
-        System.out.println();
-
+    /**
+     Default constructor
+     */
+    public BusStation() {
+        flightNumber = 0;
+        departureTime = null;
+        dayOfTheWeek = null;
+        numberOfFreeSeats = 0;
+        route = null;
     }
+
+    @Override
+    public String toString() {
+        return  "Номер рейса: " + flightNumber + "\n" +
+                "Время отправления: " + departureTime + '\n' +
+                "День недели: " + dayOfTheWeek + '\n' +
+                "Кол-во свободных мест: " + numberOfFreeSeats + '\n' +
+                "Маршрут: " + Arrays.toString(route);
+    }
+
 }
+

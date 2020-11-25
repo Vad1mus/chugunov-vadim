@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="14.0.2" class="java.beans.XMLDecoder">
+ <array class="ua.oop.khpi.chugunov07.BusStation" length="1">
+  <void index="0">
+   <object class="ua.oop.khpi.chugunov07.BusStation">
+    <void property="dayOfTheWeek">
+     <string>Среда</string>
+    </void>
+    <void property="departureTime">
+     <string>15:00</string>
+    </void>
+    <void property="flightNumber">
+     <int>134</int>
+    </void>
+    <void property="numberOfFreeSeats">
+     <int>25</int>
+    </void>
+    <void property="route">
+     <array class="java.lang.String" length="2">
+      <void index="0">
+       <string>Харьков-Главная 15:00</string>
+      </void>
+      <void index="1">
+       <string>Киев-Глаавная 21:00</string>
+      </void>
+     </array>
+    </void>
+   </object>
+  </void>
+ </array>
+</java>
