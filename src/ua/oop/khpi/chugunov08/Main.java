@@ -112,7 +112,7 @@ public class Main {
                         for (File it : list) {
                             if (it.isDirectory()) {
                                 System.out.print(it.getName());
-                                System.out.println("(...)");
+                                System.out.println("(Каталог)");
                                 continue;
                             }
                             System.out.println("\n" + it.getName() + "\n");
