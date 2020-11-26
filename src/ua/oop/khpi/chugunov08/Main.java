@@ -46,7 +46,7 @@ public class Main {
 
             /* User menu output. */
             System.out.println("\n---МЕНЮ---");
-            System.out.println("1. Опредилить количество элементов массива\"");
+            System.out.println("1. Определить кол-во элементов массива");
             System.out.println("2. Назначить элементы массива");
             System.out.println("3. Сохранить массив на длительный срок");
             System.out.println("4. Извлечь массив из файла");

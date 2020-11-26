@@ -16,7 +16,7 @@ public class BusStation {
     private String departureTime;  // departure time of the bus
     private String dayOfTheWeek;   // day of the week when the bus travels
     private int numberOfFreeSeats; // count of free seats in bus
-    private String[] route;        // The bus route (name of station, arrival time)
+    private  Flight[] route;       // The bus route (name of station, arrival time)
     int size = 0;
 
     /**
@@ -39,7 +39,7 @@ public class BusStation {
         this.numberOfFreeSeats = numberOfFreeSeats;
     }
 
-    public void setRoute(String[] route) {
+    public void setRoute(Flight[] route) {
         this.route = route;
     }
 
@@ -51,13 +51,17 @@ public class BusStation {
     public void enterRoute(int stationNum) throws IOException {
         BufferedReader reader = new BufferedReader(
                 new InputStreamReader(System.in));
-        this.route = new String[stationNum];
+        this.route = new Flight[stationNum];
         System.out.println("Введите " + stationNum + " станций");
-        String getRouteName;
+        String station;
+        String time;
         for (int i = 0; i < stationNum; i++) {
-            System.out.print((i + 1) + ". ");
-            getRouteName = reader.readLine();
-            this.route[i] = getRouteName;
+            System.out.print((i + 1) + ".\n");
+            System.out.print("Введите название: ");
+            station = reader.readLine();
+            System.out.print("Введите время прибытия: ");
+            time = reader.readLine();
+            this.route[i] = new Flight(station, time);
         }
     }
 
@@ -80,11 +84,11 @@ public class BusStation {
         return dayOfTheWeek;
     }
 
-    public String getRouteOnIndex(int index) {
+    public Flight getRouteOnIndex(int index) {
         return route[index];
     }
 
-    public String[] getRoute (){
+    public Flight[] getRoute (){
         return route;
     }
 
@@ -107,6 +111,5 @@ public class BusStation {
                 "Кол-во свободных мест: " + numberOfFreeSeats + '\n' +
                 "Маршрут: " + Arrays.toString(route);
     }
-
 }
 

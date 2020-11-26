@@ -4,24 +4,38 @@
   <void index="0">
    <object class="ua.oop.khpi.chugunov07.BusStation">
     <void property="dayOfTheWeek">
-     <string>Среда</string>
+     <string>Суббота</string>
     </void>
     <void property="departureTime">
-     <string>15:00</string>
+     <string>12:00</string>
     </void>
     <void property="flightNumber">
-     <int>134</int>
+     <int>339</int>
     </void>
     <void property="numberOfFreeSeats">
-     <int>25</int>
+     <int>12</int>
     </void>
     <void property="route">
-     <array class="java.lang.String" length="2">
+     <array class="ua.oop.khpi.chugunov07.Flight" length="2">
       <void index="0">
-       <string>Харьков-Главная 15:00</string>
+       <object class="ua.oop.khpi.chugunov07.Flight">
+        <void property="arrivalTime">
+         <string>12:00</string>
+        </void>
+        <void property="nameOfStation">
+         <string>Харьков</string>
+        </void>
+       </object>
       </void>
       <void index="1">
-       <string>Киев-Глаавная 21:00</string>
+       <object class="ua.oop.khpi.chugunov07.Flight">
+        <void property="arrivalTime">
+         <string>16:00</string>
+        </void>
+        <void property="nameOfStation">
+         <string>Киев</string>
+        </void>
+       </object>
       </void>
      </array>
     </void>
