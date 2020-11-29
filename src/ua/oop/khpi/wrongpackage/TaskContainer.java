@@ -1,4 +1,4 @@
-package ua.oop.khpi.chugunov05;
+package ua.oop.khpi.wrongpackage;
 
 import java.util.NoSuchElementException;
 import java.util.Iterator;
