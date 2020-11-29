@@ -1,35 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="14.0.2" class="java.beans.XMLDecoder">
- <array class="ua.oop.khpi.chugunov07.BusStation" length="1">
-  <void index="0">
-   <object class="ua.oop.khpi.chugunov07.BusStation">
-    <void property="dayOfTheWeek">
-     <string>123</string>
-    </void>
-    <void property="departureTime">
-     <string>123</string>
-    </void>
-    <void property="flightNumber">
-     <int>123</int>
-    </void>
-    <void property="numberOfFreeSeats">
-     <int>123</int>
-    </void>
-    <void property="route">
-     <array class="ua.oop.khpi.chugunov07.Flight" length="1">
-      <void index="0">
-       <object class="ua.oop.khpi.chugunov07.Flight">
-        <void property="arrivalTime">
-         <string>123</string>
-        </void>
-        <void property="nameOfStation">
-         <string>123</string>
-        </void>
-       </object>
-      </void>
-     </array>
-    </void>
-   </object>
-  </void>
- </array>
+ <null/>
 </java>
