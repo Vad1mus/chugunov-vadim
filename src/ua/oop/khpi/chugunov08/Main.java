@@ -98,10 +98,10 @@ public class Main {
     }
 
     private static void save() throws IOException {
-        key = "";
-        ArrayList<String> parents = new ArrayList<>();
-        String choice;
+        ArrayList<String> hightFolder = new ArrayList<>();
+        String pick;
         StringBuilder direct = new StringBuilder("X:\\");
+        key = "";
         while(!key.equals("1") && !key.equals("4")) {
             System.out.println("\nТекущий каталог: " + direct.toString());
             System.out.println("1. Сохранить XML-файл в текущем каталоге.");
@@ -113,32 +113,32 @@ public class Main {
             System.out.println();
             switch (key) {
                 case "1":
-                    String currentDir = direct.toString();
-                    FileOutputStream fos = new FileOutputStream(currentDir + "\\JavaBeans.xml");
+                    String Direct = direct.toString();
+                    FileOutputStream fos = new FileOutputStream(Direct + "\\JavaBeans.xml");
                     BufferedOutputStream bos = new BufferedOutputStream(fos);
                     XMLEncoder xmlEncoder = new XMLEncoder(bos);
                     xmlEncoder.writeObject(Entries);
                     xmlEncoder.close();
                     break;
                 case "2":
+                    int helpCount = 1;
                     File directory = new File(direct.toString());
-                    File[] list = directory.listFiles();
-                    ArrayList<File> catalogs = new ArrayList<>();
-                    int index = 1;
-                    if (list != null) {
-                        for (File it : list) {
+                    File[] array = directory.listFiles();
+                    ArrayList<File> folders = new ArrayList<>();
+                    if (array != null) {
+                        for (File it : array) {
                             if (it.isDirectory()) {
-                                catalogs.add(it);
+                                folders.add(it);
                             }
                         }
-                        for (File it : catalogs) {
-                            System.out.println(index++ + ". " + it.getName());
+                        for (File it : folders) {
+                            System.out.println(helpCount++ + ". " + it.getName());
                         }
                         System.out.println();
                         System.out.print("Выберите каталог: ");
-                        choice = reader.readLine();
-                        parents.add(direct.toString());
-                        direct.append(catalogs.get(Integer.parseInt(choice) - 1).getName()).append("\\");
+                        pick = reader.readLine();
+                        hightFolder.add(direct.toString());
+                        direct.append(folders.get(Integer.parseInt(pick) - 1).getName()).append("\\");
                     }
                     break;
                 case "3":
@@ -146,8 +146,9 @@ public class Main {
                         System.out.println("Вы уже в корневом каталоге!");
                         break;
                     }
-                    direct.delete(parents.get(parents.size() - 1).length(), direct.length());
-                    parents.remove(parents.size() - 1);
+                    direct.delete(hightFolder.get(hightFolder.size() - 1).length(),
+                    direct.length());
+                    hightFolder.remove(hightFolder.size() - 1);
                     break;
                 default: break;
             }
