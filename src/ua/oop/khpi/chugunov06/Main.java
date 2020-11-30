@@ -1,6 +1,7 @@
 package ua.oop.khpi.chugunov06;
 
 import ua.oop.khpi.chugunov03.Helper;
+import ua.oop.khpi.zavadskiyHelper.ZavadskiyHelper;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -70,9 +71,12 @@ public class Main {
                         break;
                     }
                 case 8:
-
+                    System.out.println("\nRunning helper method of another student...");
+                    ZavadskiyHelper.start(
+                            new StringBuilder(kontain.arrayToStr()));
                     break;
                 case 9:
+                    System.out.println("\nRunning MY helper method...");
                     String myTaskString = kontain.arrayToStr();
                     String [] array = Helper.SplitString(myTaskString);
                     Helper.PrintResult(array);
