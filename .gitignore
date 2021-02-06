@@ -1,5 +1,10 @@
 .idea
 .classpath
-chugunov-vadim.iml
+*.iml
 .settings
 out
+*.xml
+.gitignore
+*.dat
+.project
+*.txt
